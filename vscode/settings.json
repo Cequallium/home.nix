@@ -1,0 +1,30 @@
+{
+  "editor.fontFamily": "'Jetbrains Mono', monospace",
+  "editor.minimap.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.profiles.linux": {
+    "zsh": {
+      "args": [
+        "zsh"
+      ],
+      "overrideName": true,
+      "path": "env"
+    }
+  },
+  "update.mode": "none",
+  "window.menuBarVisibility": "compact",
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "bearded-icons",
+  "workbench.layoutControl.enabled": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "editor.fontLigatures": true
+}
