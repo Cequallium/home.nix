@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -18,6 +18,7 @@
     neovide
     julia
     lazygit # TODO: add custome nix config
+    git
   ];
   programs.go.enable = true;
 

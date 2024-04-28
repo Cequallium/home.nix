@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
   imports =
-    [ ./sh.nix ./git.nix ./vscode/vscodium.nix ./nvim/nvim.nix ./dev.nix ];
+    [ ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ./dev.nix ];
   nixpkgs.config.allowUnfree = true;
   home.username = "cql";
   home.homeDirectory = "/home/cql";
@@ -20,7 +20,7 @@
     kdePackages.ktorrent
     xwaylandvideobridge
     # francis
-
+    
     prismlauncher
     spotube
     inkscape
