@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
 
   imports =
@@ -13,20 +12,19 @@
   home.packages = with pkgs; [
     kdePackages.kcalc
     kdePackages.kdenlive
-    kdePackages.dragon
     kdePackages.filelight
     kdePackages.kclock
     kdePackages.plasma-systemmonitor
-    kdePackages.ktorrent
     xwaylandvideobridge
     # francis
-    
-    prismlauncher
+    qbittorrent
     spotube
     inkscape
     gimp
     blender
-    chromium
+    vlc
+
+    prismlauncher
     heroic
     vesktop
     fzf
@@ -37,11 +35,11 @@
     nixfmt-rfc-style
     unzip
 
-    wl-clipboard
     ripgrep
-    aseprite
-    kde-rounded-corners 
-    
+    fontconfig
+    p7zip
+    unrar-free
+
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
@@ -53,8 +51,6 @@
     # '')
   ];
   services.kdeconnect.enable = true;
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -69,6 +65,6 @@
     # '';
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; };
+  # home.sessionVariables = { EDITOR = "nvim"; };
   programs.home-manager.enable = true;
 }

@@ -1,14 +1,14 @@
 { pkgs, ... }:
 
 {
-    programs.vscode = {
-        enableUpdateCheck = false;
-        extensions = with pkgs.vscode-extensions; [
-            catppuccin.catppuccin-vsc
-            timonwong.shellcheck
-            eamodio.gitlens
-        ];
+  programs.vscode = {
+    enableUpdateCheck = false;
+    extensions = with pkgs.vscode-extensions; [
+      catppuccin.catppuccin-vsc
+      timonwong.shellcheck
+      eamodio.gitlens
+    ];
 
-        userSettings = builtins.fromJSON (builtins.readFile ./settings.json) ;
-    };
+    userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
+  };
 }
