@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-
   imports =
     [ ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ./dev.nix ];
   nixpkgs.config.allowUnfree = true;
@@ -15,8 +14,8 @@
     kdePackages.filelight
     kdePackages.kclock
     kdePackages.plasma-systemmonitor
+    kdePackages.akregator
     xwaylandvideobridge
-    # francis
     qbittorrent
     spotube
     inkscape
@@ -43,6 +42,7 @@
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
+    olive-editor
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -65,6 +65,8 @@
     # '';
   };
 
-  # home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
   programs.home-manager.enable = true;
 }

@@ -14,13 +14,14 @@
       zj = "zellij";
       za = "zellij a";
     };
-
+    dotDir = ".config/zsh";
     initExtra = "bindkey '^[[1;5D' backward-word;
         bindkey '^[[1;5C' forward-word;";
-
+    defaultKeymap = "emacs";
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/.local/share/zsh/history";
     history.extended = true;
+    
   };
 
   programs.starship = {
@@ -40,5 +41,6 @@
 
   programs.zellij = {
     enable = true;
+    # enableZshIntegration = true;
   };
 }

@@ -7,17 +7,22 @@
     bun
     gcc
     # try to update these to new version...
-    flutter
+    # flutter
     nodejs
-    scala_3
     gleam
+    erlang
     nixd
-    lazygit # TODO: add custome nix config
+    lazygit # TODO: add custom nix config
     git
     podman
     zig_0_12
     zig-shell-completions
     godot_4
+    wl-clipboard
+    # python313Full
+    # pipx
+    # pipenv
   ];
   programs.go.enable = true;
+
 }
