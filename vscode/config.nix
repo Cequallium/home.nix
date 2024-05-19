@@ -11,4 +11,5 @@
 
     userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
   };
+  stylix.targets.vscode.enable = true;
 }

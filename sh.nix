@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 {
   programs.command-not-found.enable = true;
@@ -10,18 +10,20 @@
     syntaxHighlighting.enable = true;
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake /etc/nixos/#default";
-      clean = "sudo nix-collect-garbage -d && nix-collect-garbage -d && nix store optimise && sudo /run/current-system/bin/switch-to-configuration boot";
       zj = "zellij";
       za = "zellij a";
     };
     dotDir = ".config/zsh";
-    initExtra = "bindkey '^[[1;5D' backward-word;
-        bindkey '^[[1;5C' forward-word;";
+    initExtra = "
+        bindkey '^[[1;5D' backward-word;\n
+        bindkey '^[[1;5C' forward-word;\n
+    ";
     defaultKeymap = "emacs";
+    envExtra = "";
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/.local/share/zsh/history";
     history.extended = true;
-    
+    history.ignoreDups = true;
   };
 
   programs.starship = {
@@ -38,9 +40,10 @@
   programs.eza.enable = true;
 
   programs.btop.enable = true;
+  stylix.targets.btop.enable = true;
 
-  programs.zellij = {
-    enable = true;
-    # enableZshIntegration = true;
-  };
+  programs.zellij.enable = true;
+
+  programs.bat.enable = true;
+  stylix.targets.bat.enable = true;
 }

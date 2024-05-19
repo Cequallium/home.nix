@@ -1,21 +1,24 @@
 { pkgs, ... }:
 {
   imports =
-    [ ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ./dev.nix ];
+    [ ./dev.nix ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ];
   nixpkgs.config.allowUnfree = true;
   home.username = "cql";
   home.homeDirectory = "/home/cql";
 
   home.stateVersion = "23.11";
 
+  stylix.targets.gtk.enable = true;
+  stylix.targets.lazygit.enable = true;
+
   home.packages = with pkgs; [
     kdePackages.kcalc
-    kdePackages.kdenlive
-    kdePackages.filelight
+    # kdePackages.kdenlive
+    # kdePackages.filelight
     kdePackages.kclock
     kdePackages.plasma-systemmonitor
     kdePackages.akregator
-    xwaylandvideobridge
+    # xwaylandvideobridge
     qbittorrent
     spotube
     inkscape
@@ -26,23 +29,19 @@
     prismlauncher
     heroic
     vesktop
-    fzf
     thunderbird
     tlrc
     gh
-    zoom-us
     nixfmt-rfc-style
     unzip
 
     ripgrep
-    fontconfig
     p7zip
-    unrar-free
+    # unrar-free
 
     jetbrains-mono
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
-    olive-editor
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -50,7 +49,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  services.kdeconnect.enable = true;
+  # services.kdeconnect.enable = true;
   # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
@@ -64,9 +63,14 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
-
+  
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  # home.keyboard = {
+  #   layout = "us";
+  #   variant = "eng";
+  # };
   programs.home-manager.enable = true;
 }
