@@ -40,10 +40,8 @@
   programs.eza.enable = true;
 
   programs.btop.enable = true;
-  stylix.targets.btop.enable = true;
 
   programs.zellij.enable = true;
 
   programs.bat.enable = true;
-  stylix.targets.bat.enable = true;
 }

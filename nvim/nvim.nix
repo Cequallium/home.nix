@@ -15,8 +15,6 @@
       nodePackages.prettier
       emmet-language-server
       markdown-oxide
-      zls
-      zig
     ];
   };
 }

@@ -1,0 +1,5 @@
+pane_frames true 
+theme "catppuccin-mocha"
+default_layout "compact"
+copy_command "wl-copy"
+scrollback_editor "nvim"

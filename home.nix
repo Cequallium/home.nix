@@ -1,15 +1,13 @@
 { pkgs, ... }:
 {
   imports =
-    [ ./dev.nix ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ];
+    [ ./stylix.nix ./dev.nix ./sh.nix ./vscode/vscodium.nix ./nvim/nvim.nix ];
   nixpkgs.config.allowUnfree = true;
+
   home.username = "cql";
   home.homeDirectory = "/home/cql";
 
   home.stateVersion = "23.11";
-
-  stylix.targets.gtk.enable = true;
-  stylix.targets.lazygit.enable = true;
 
   home.packages = with pkgs; [
     kdePackages.kcalc
@@ -37,11 +35,14 @@
 
     ripgrep
     p7zip
+    
+    freetube
+    spotube
+    mullvad-browser
+    audacious
+    audacious-plugins
     # unrar-free
-
-    jetbrains-mono
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-
+    ollama
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
@@ -62,6 +63,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    ".config/zellij".source = ./config/zellij;
   };
   
   home.sessionVariables = {

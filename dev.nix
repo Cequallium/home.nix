@@ -17,7 +17,6 @@
     gleam
     erlang
     zig
+    go
   ];
-  programs.go.enable = true;
-
 }
